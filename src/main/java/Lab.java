@@ -1,4 +1,8 @@
+import java.util.ArrayDeque;
 import java.util.Deque;
+//import java.util.Stack;
+
+//import kotlin.sequences.DropWhileSequence;
 /**
  * Stacks are LIFO - last in, first out, like a stack of plates or books, or the puzzle game "Towers of Hanoi".
  * They are used in algorithms where it is needed to keep track of the ordering in which the elements were inserted.
@@ -20,17 +24,18 @@ public class Lab {
      * @return a newly instantiated Deque. Deques implement both stack and queue behavior.
      */
     public Deque<String> createNewStack(){
-        return null;
+        // return Stack<String> stack = new Stack<>();
+        Deque<String> deque = new ArrayDeque<>();
+        return deque;
     }
-
     /**
      * @param stack A Deque of Strings.
      * @return the number of elements in the deque.
      */
     public int getSize(Deque<String> stack){
-        return 0;
+        //Deque<String> deque = new ArrayDeque<>();
+            return stack.size();
     }
-
     /**
      * Push a value to the top of the deque.
      * (this adds the value to the Stack.)
@@ -38,8 +43,9 @@ public class Lab {
      * @param item a String to be added to the deque.
      */
     public void addToTopOfStack(Deque<String> stack, String item){
+       // Deque<String> stackDeque = new ArrayDeque<>();
+            stack.addLast(item);
     }
-
     /**
      * Pop the value from the top of the deque and return that value.
      * (this removes the most recently-pushed value)
@@ -47,7 +53,7 @@ public class Lab {
      * @return the value popped from the top of the deque.
      */
     public String removeFromTopOfStack(Deque<String> stack){
-        return "";
+        return stack.pollLast();
     }
     /**
      * Peek the value at the top of a deque.
@@ -57,6 +63,6 @@ public class Lab {
      * @return the value peeked from the top of the deque.
      */
     public String getTopOfStackWithoutRemoving(Deque<String> stack){
-        return "";
+        return stack.peekLast();
     }
 }
